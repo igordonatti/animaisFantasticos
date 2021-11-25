@@ -66,6 +66,9 @@
   width: 100%;
   padding: .7rem .5rem;
   box-sizing: border-box;
+  background: rgba(153, 153, 153, 0.2);
+  border-radius: .5rem;
+  border: none;
 }
 
 .modal button[type="submit"] {
@@ -80,4 +83,17 @@
   margin-top: 1rem;
   font-weight: bold;
   cursor: pointer;
+}
+
+@media (max-width: 700px) {
+  .modal {
+    min-width: 150px;
+  }
+}
+
+@media (max-width: 320px) {
+  .modal {
+    max-width: 150px;
+    max-height: 200px;
+  }
 }

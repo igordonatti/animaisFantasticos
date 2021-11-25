@@ -304,6 +304,10 @@ html.textoMaior {
         grid-gap: 10px;
     }
 
+    .animais {
+        margin-top: 3rem;
+    }
+
     .animais-lista {
         grid-column: 1;
     }
@@ -320,6 +324,9 @@ html.textoMaior {
 
     .menu {
         margin-top: 0px;
+        position: fixed;
+        z-index: 200;
+        width: 100vh;
     }
 
     .copy {
