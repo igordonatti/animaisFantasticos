@@ -1,25 +1,24 @@
-export function initAnimacaoScroll() {
-    const sections = document.querySelectorAll('[data-anime="scroll"]');
+export default function initAnimacaoScroll() {
+  const sections = document.querySelectorAll('[data-anime="scroll"]');
+  const windowMetade = window.innerHeight * 0.7;
 
-    if (sections.length) {
-        const windowMetade = window.innerHeight * 0.7;
+  function animaScroll() {
+    sections.forEach((section) => {
+      const sectionTop = section.getBoundingClientRect().top;
+      const isSectionVisible = sectionTop - windowMetade < 0;
+      if (isSectionVisible) {
+        section.classList.add("ativo");
+      }
+      // else if (section.classList.contains('ativo'))
+      //     section.classList.remove('ativo')
+      // no curso ele coloca esse else if, porem prefiro sem, mais clean
+      // e bonito
+    });
+  }
 
-        function animaScroll() {
-            sections.forEach((section) => {
-                const sectionTop = section.getBoundingClientRect().top;
-                const isSectionVisible = (sectionTop - windowMetade) < 0;
-                if (isSectionVisible) {
-                    section.classList.add('ativo');
-                }
-                // else if (section.classList.contains('ativo'))
-                //     section.classList.remove('ativo')
-                // no curso ele coloca esse else if, porem prefiro sem, mais clean
-                // e bonito
-            })
-        }
+  if (sections.length) {
+    animaScroll();
 
-        animaScroll();
-
-        window.addEventListener('scroll', animaScroll);
-    }
+    window.addEventListener("scroll", animaScroll);
+  }
 }
