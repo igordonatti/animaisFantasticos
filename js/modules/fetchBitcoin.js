@@ -1,9 +1,10 @@
-export default async function initFetchBitcoin() {
+export default async function fetchBitcoin(url, target) {
   try {
-    const responseBitcoin = await fetch("https://blockchain.info/ticker");
+    const responseBitcoin = await fetch(url);
     const bitcoinJson = await responseBitcoin.json();
-    const btcPreco = document.querySelector(".btc-preco");
+    const btcPreco = document.querySelector(target);
 
+    console.log(bitcoinJson);
     btcPreco.innerText = (1000 / bitcoinJson.BRL.sell).toFixed(4);
   } catch (erro) {
     throw new Error(erro);
