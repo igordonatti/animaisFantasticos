@@ -41,6 +41,8 @@ export default class ScrollAnima {
       this.checkDistance();
       window.addEventListener("scroll", this.checkDistance);
     }
+
+    return this;
   }
 
   // funcao adaptada por mim para desativar o event listener
